@@ -1,21 +1,14 @@
 var argv = require('minimist')(process.argv.slice(2));
 var modu = require('./index');
+var util = require('./utils');
 
-var usage = function() {
-  var text = [];
-  text.push('usage: node cli.js [options]');
-  text.push('');
-  text.push(' --hello prints a message');
-  text.push(' --help prints this message');
-  text.push('');
-  return text.join('\n');
-};
-
-if (argv.hello) {
-  console.log(modu.hello());
+if (argv.version) {
+  console.log(util.version());
 } else if (argv.help) {
-  console.log(usage());
+  console.log(util.usage());
+} else if (argv.hello) {
+  console.log(modu.hello());
 } else {
   console.log('Command not found. Try any of the following:');
-  console.log(usage());
+  console.log(util.usage());
 }
