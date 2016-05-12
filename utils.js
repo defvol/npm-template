@@ -6,6 +6,7 @@ var fs = require('fs');
  */
 module.exports.usage = function () {
   var u = [];
+  u.push('A minimalist template to build npm modules');
   u.push('usage: node cli.js [options]');
   u.push('');
   u.push(' --hello prints a message');
